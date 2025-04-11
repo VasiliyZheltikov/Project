@@ -6,9 +6,11 @@ public class Homework_1_2 {
 
         int n = 47;
 
-        int d = n / 10; // получение десятков
-        int e = n % 10; // получение единиц
+        int tens = n / 10;
+        int units = n % 10;
 
-        System.out.println(d + e);
+        int result = tens + units;
+
+        System.out.println(result);
     }
 }

@@ -7,6 +7,8 @@ public class Homework_1_1 {
         int b = 5;
         int c = 3;
 
-        System.out.println("a = " + 4 * (b + c - 1) / 2);
+        int result = 4 * (b + c - 1) / 2;
+
+        System.out.println("a = " + result);
     }
 }

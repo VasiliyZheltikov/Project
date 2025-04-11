@@ -4,12 +4,13 @@ public class Homework_1_3 {
 
     public static void main(String[] args) {
 
-        int n = 197; // число от 100 до 999
+        int n = 197;
 
-        int s = n / 100; // число сотен
-        int d = n / 10 % 10; // число десятков
-        int e = n % 10; // число единиц
+        int hundreds = n / 100;
+        int tens = n / 10 % 10;
+        int units = n % 10;
 
-        System.out.println(s + d + e);
+        int result = hundreds + tens + units;
+        System.out.println(result);
     }
 }

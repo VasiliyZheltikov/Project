@@ -6,8 +6,8 @@ public class Homework_1_4 {
 
         double n = 14.51;
 
-        int m = (int)Math.round(n);
+        int result = (int)Math.round(n);
 
-        System.out.println(m);
+        System.out.println(result);
     }
 }
