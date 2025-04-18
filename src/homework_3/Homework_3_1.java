@@ -111,7 +111,7 @@ public class Homework_3_1 {
             mass2[i] = (int) (number / Math.pow(10, mass2.length - i - 1) % 10);
         }
         System.out.print("Исправленный массив: " + Arrays.toString(mass2));
-
+//        scanner.close();
         // решение работает только для длины массива < 10, далее упираемся в ограничение формата данных int
     }
 }
