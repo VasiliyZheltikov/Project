@@ -1,6 +1,5 @@
 package homework_4_tic_tac_toe;
 
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -12,7 +11,7 @@ public class Tic_tac_toe {
         String[][] game_field = {{" ", " ", " "}, {" ", " ", " "}, {" ", " ", " "}};
         int player = 1; // порядковый номер игрока
         boolean flag = false; // признак завершения игры
-        int count = 0; // кол-во совпадающших элементов в строке / столбце / диагонали
+        int count; // кол-во совпадающших элементов в строке / столбце / диагонали
         int input;
         while (!flag) {
             System.out.print("Введите номер столбца и строки в формате XX (столбец, строка): ");
