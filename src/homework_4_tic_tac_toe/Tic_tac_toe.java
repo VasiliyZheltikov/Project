@@ -54,15 +54,21 @@ public class Tic_tac_toe {
                 System.out.println();
                 System.out.println("-------------");
             }
-            // если все значения столбца ==
             // если главная диагональ ==
             // если побочная диагональ ==
-            for (int i = 0; i < game_field.length; i++) { // проверка 3 одинаковых в каждой строке
+            for (int i = 0; i < game_field.length; i++) {
                 count = 0;
                 for (int j = 0; j < game_field.length - 1; j++) {
-                    if (!Objects.equals(game_field[i][j], " ")) {
+                    if (!Objects.equals(game_field[i][j], " ")) { // проверка 3 одинаковых в каждой строке
                         String temp = game_field[i][j + 1];
                         if (Objects.equals(game_field[i][j], temp)) {
+                            count++;
+                        } else {
+                            break;
+                        }
+                    } else if (!Objects.equals(game_field[j][i], " ")) { // проверка 3 одинаковых в каждом столбце
+                        String temp = game_field[j + 1][i];
+                        if (Objects.equals(game_field[j][i], temp)) {
                             count++;
                         } else {
                             break;
