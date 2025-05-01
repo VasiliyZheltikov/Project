@@ -11,10 +11,10 @@ public class Tic_tac_toe {
         String[][] game_field = {{" ", " ", " "}, {" ", " ", " "}, {" ", " ", " "}};
         int player = 1; // порядковый номер игрока
         boolean flag = false; // признак завершения игры
-        int count; // кол-во совпадающших элементов в строке / столбце / диагонали
+        int count = 0; // кол-во совпадающших элементов в строке / столбце / диагонали
         int input;
         while (!flag) {
-            System.out.print("Введите номер столбца и строки в формате XX (столбец, строка): ");
+            System.out.print("Введите номер столбца и строки в формате XX (строка, столбец): ");
             if (scanner.hasNextInt()) {
                 input = scanner.nextInt();
                 int column = input / 10 - 1;
@@ -63,15 +63,12 @@ public class Tic_tac_toe {
                         String temp = game_field[i][j + 1];
                         if (Objects.equals(game_field[i][j], temp)) {
                             count++;
-                        } else {
-                            break;
                         }
-                    } else if (!Objects.equals(game_field[j][i], " ")) { // проверка 3 одинаковых в каждом столбце
+                    }
+                    if (!Objects.equals(game_field[j][i], " ")) { // проверка 3 одинаковых в каждом столбце
                         String temp = game_field[j + 1][i];
                         if (Objects.equals(game_field[j][i], temp)) {
                             count++;
-                        } else {
-                            break;
                         }
                     }
                 }
@@ -79,6 +76,18 @@ public class Tic_tac_toe {
                     System.out.println("ПОБЕДА");
                     flag = true;
                 }
+            }
+            for (int k = 0; k < game_field.length - 1; k++) { // проверка 3 одинаковых в главной диагонали
+                if (!Objects.equals(game_field[k][k], " ")) {
+                    String temp = game_field[k + 1][k + 1];
+                    if (Objects.equals(game_field[k][k], temp)) {
+                        count++;
+                    }
+                }
+            }
+            if (count == 2) {
+                System.out.println("ПОБЕДА");
+                flag = true;
             }
         }
     }
