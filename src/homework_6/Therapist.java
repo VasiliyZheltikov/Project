@@ -1,6 +1,6 @@
 package homework_6;
 
-public class Therapist extends Doctor{
+public class Therapist extends Doctor {
     @Override
     public void toTreat() {
         System.out.println("Терапевт лечит простуду");
