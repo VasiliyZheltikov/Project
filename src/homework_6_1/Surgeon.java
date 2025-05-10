@@ -1,4 +1,4 @@
-package homework_6;
+package homework_6_1;
 
 public class Surgeon extends Doctor {
     @Override

@@ -1,6 +1,4 @@
-package homework_6;
-
-import java.util.Objects;
+package homework_6_1;
 
 public class Main {
 
