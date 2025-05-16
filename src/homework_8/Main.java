@@ -9,11 +9,13 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите 3 строки:");
         String[] mass = new String[]{scanner.nextLine(), scanner.nextLine(), scanner.nextLine()};
+        String string = scanner.nextLine();
 
         findShortestAndLongest(mass);
         sortedUp(mass);
         lengthLessMedian(mass);
         findFirstWordWithDiffLetters(mass);
+        doDoubleLetters(string);
     }
 
     public static void findShortestAndLongest(String[] mass) { // ЗАДАЧА 1
@@ -83,5 +85,13 @@ public class Main {
                 }
             }
         }
+    }
+
+    public static void doDoubleLetters(String string) {
+        StringBuilder doubleString = new StringBuilder(string);
+        for (int i = 0; i < doubleString.length(); i += 2) {
+            doubleString.insert(i, doubleString.charAt(i));
+        }
+        System.out.println(doubleString);
     }
 }
