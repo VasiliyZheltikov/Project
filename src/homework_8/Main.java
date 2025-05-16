@@ -13,6 +13,7 @@ public class Main {
         findShortestAndLongest(mass);
         sortedUp(mass);
         lengthLessMedian(mass);
+        findFirstWordWithDiffLetters(mass);
     }
 
     public static void findShortestAndLongest(String[] mass) { // ЗАДАЧА 1
@@ -31,7 +32,7 @@ public class Main {
 
     public static void sortedUp(String[] mass) { // ЗАДАЧА 2
         String temp;
-        for (int i = 0; i < mass.length - 1 ; i++) {
+        for (int i = 0; i < mass.length - 1; i++) {
             for (int j = i + 1; j < mass.length; j++) {
                 if (mass[j].length() < mass[i].length()) {
                     temp = mass[i];
@@ -44,19 +45,41 @@ public class Main {
     }
 
     public static void lengthLessMedian(String[] mass) { // ЗАДАЧА 3
+        int medianLength = findMedianLength(mass);
+        for (String s : mass) {
+            if (s.length() < medianLength) {
+                System.out.printf("Строка \"%s\" имеет длину (%s) меньше средней длины строк в массиве (%s)%n",
+                        s, s.length(), medianLength);
+            }
+        }
+    }
+
+    public static int findMedianLength(String[] mass) {
         int medianLength = 0;
         int divider = 0;
         for (String s : mass) {
             medianLength += s.length();
             divider++;
         }
-        medianLength /= divider;
-        for (String s: mass) {
-            if (s.length() < medianLength) {
-                System.out.printf("Строка \"%s\" имеет длину (%s) меньше средней длины строк в массиве (%s)%n",
-                        s, s.length(), medianLength);
+        return medianLength / divider;
+    }
+
+    public static void findFirstWordWithDiffLetters(String[] mass) { // ЗАДАЧА 4
+        String[] words;
+        char [] letters;
+        for (String s : mass) {
+            words = s.split(" ");
+            for (String word : words) {
+                letters = word.toCharArray();
+                for (char letter : letters) {
+                    if (word.indexOf(letter) != word.lastIndexOf(letter) && word.length() > 1) {
+                        break;
+                    } else {
+                        System.out.println("Первое слово, полностью состоящее из разных букв: " + word);
+                        return;
+                    }
+                }
             }
         }
-
     }
 }
