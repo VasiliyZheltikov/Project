@@ -66,16 +66,18 @@ public class Main {
 
     public static void findFirstWordWithDiffLetters(String[] mass) { // ЗАДАЧА 4
         String[] words;
-        char [] letters;
+        char[] letters;
         for (String s : mass) {
             words = s.split(" ");
             for (String word : words) {
                 letters = word.toCharArray();
                 for (char letter : letters) {
-                    if (word.indexOf(letter) != word.lastIndexOf(letter) && word.length() > 1) {
+                    if (word.length() < 2) {
+                        break;
+                    } else if (word.indexOf(letter) != word.lastIndexOf(letter)) {
                         break;
                     } else {
-                        System.out.println("Первое слово, полностью состоящее из разных букв: " + word);
+                        System.out.printf("Первое слово, полностью состоящее из разных букв: %s%n", word);
                         return;
                     }
                 }
