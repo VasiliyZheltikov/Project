@@ -12,6 +12,7 @@ public class Main {
 
         findShortestAndLongest(mass);
         sortedUp(mass);
+        lengthLessMedian(mass);
     }
 
     public static void findShortestAndLongest(String[] mass) { // ЗАДАЧА 1
@@ -28,7 +29,7 @@ public class Main {
         System.out.printf("Самая длинная строка: \"%s имеет длину: %s%n", longest, longest.length());
     }
 
-    public static void sortedUp(String[] mass) {
+    public static void sortedUp(String[] mass) { // ЗАДАЧА 2
         String temp;
         for (int i = 0; i < mass.length - 1 ; i++) {
             for (int j = i + 1; j < mass.length; j++) {
@@ -40,5 +41,22 @@ public class Main {
             }
         }
         System.out.println(Arrays.toString(mass));
+    }
+
+    public static void lengthLessMedian(String[] mass) { // ЗАДАЧА 3
+        int medianLength = 0;
+        int divider = 0;
+        for (String s : mass) {
+            medianLength += s.length();
+            divider++;
+        }
+        medianLength /= divider;
+        for (String s: mass) {
+            if (s.length() < medianLength) {
+                System.out.printf("Строка \"%s\" имеет длину (%s) меньше средней длины строк в массиве (%s)%n",
+                        s, s.length(), medianLength);
+            }
+        }
+
     }
 }
