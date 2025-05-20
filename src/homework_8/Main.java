@@ -10,6 +10,7 @@ public class Main {
         System.out.println("Введите 3 строки:");
         String[] mass = new String[]{scanner.nextLine(), scanner.nextLine(), scanner.nextLine()};
         String string = scanner.nextLine();
+        scanner.close();
 
         findShortestAndLongest(mass);
         sortedUp(mass);
@@ -73,15 +74,21 @@ public class Main {
             words = s.split(" ");
             for (String word : words) {
                 letters = word.toCharArray();
+                boolean flag = false;
                 for (char letter : letters) {
                     if (word.length() < 2) {
+                        flag = false;
                         break;
                     } else if (word.indexOf(letter) != word.lastIndexOf(letter)) {
+                        flag = false;
                         break;
                     } else {
-                        System.out.printf("Первое слово, полностью состоящее из разных букв: %s%n", word);
-                        return;
+                        flag = true;
                     }
+                }
+                if (flag) {
+                    System.out.printf("Первое слово, полностью состоящее из разных букв: %s%n", word);
+                    return;
                 }
             }
         }

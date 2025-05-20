@@ -57,7 +57,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
         Main.divide(10, 0);
         Main.divideSomeElement(new int[]{1, 2}, 2, 2);
         Main.divideSomeElement(new int[]{1, 2, 3}, 2, 0);
