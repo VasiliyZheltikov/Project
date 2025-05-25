@@ -12,5 +12,6 @@ public class Task1 {
         String inputString = scanner.nextLine();
         HashSet<String> distinctValues = new HashSet<>(Arrays.asList(inputString.split("")));
         System.out.println(distinctValues);
+        scanner.close();
     }
 }
