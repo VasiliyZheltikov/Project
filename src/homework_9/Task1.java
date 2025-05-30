@@ -10,7 +10,7 @@ public class Task1 {
         System.out.print("Введите набор чисел: ");
         Scanner scanner = new Scanner(System.in);
         String inputString = scanner.nextLine();
-        HashSet<String> distinctValues = new HashSet<>(Arrays.asList(inputString.split("")));
+        HashSet<String> distinctValues = new HashSet<>(Arrays.asList(inputString.split(",")));
         System.out.println(distinctValues);
         scanner.close();
     }
